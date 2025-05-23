@@ -34,29 +34,48 @@ final class HTTPManager {
             complete(data) // complete에 담겨 온 디코더 클로저에 data를 넘김
         }.resume() // 해당 task를 실행함
     }
-
-    //Post - encode된 Data를 매개변수로 받아옴
-    static func requestPOST(url: String, encodingData: Data, complete: @escaping (Data) -> ()) {
-        guard let validURL = URL(string: url) else { return }
-
-        var urlRequest = URLRequest(url: validURL)
-        urlRequest.httpMethod = HTTPMethod.post.description
-        urlRequest.httpBody = encodingData // GET과 다르게 보낼 데이터를 httpBody에 넣어준다
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("\(encodingData.count)", forHTTPHeaderField: "Content-Length")
-
-        URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, error in
-            guard let data = data else { return }
-            guard let response = urlResponse as? HTTPURLResponse, (200..<300).contains(response.statusCode) else {
-                if let response = urlResponse as? HTTPURLResponse {
-                    os_log("%@", "\(response.statusCode)")
+    
+    
+    static func requestPOST(url: String, encodingData: Data, complete: @escaping (Data) -> Void) {
+            guard let url = URL(string: url) else { return }
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = encodingData
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let data = data {
+                    complete(data)
+                } else {
+                    print("❌ POST 요청 실패: \(error?.localizedDescription ?? "알 수 없음")")
                 }
-                return
-            }
-
-            complete(data)
-        }.resume()
-    }
+            }.resume()
+        }
+    
+// ----------- 구버전 ------------
+//    //Post - encode된 Data를 매개변수로 받아옴
+//    static func requestPOST(url: String, encodingData: Data, complete: @escaping (Data) -> ()) {
+//        guard let validURL = URL(string: url) else { return }
+//
+//        var urlRequest = URLRequest(url: validURL)
+//        urlRequest.httpMethod = HTTPMethod.post.description
+//        urlRequest.httpBody = encodingData // GET과 다르게 보낼 데이터를 httpBody에 넣어준다
+//        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        urlRequest.setValue("\(encodingData.count)", forHTTPHeaderField: "Content-Length")
+//
+//        URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, error in
+//            guard let data = data else { return }
+//            guard let response = urlResponse as? HTTPURLResponse, (200..<300).contains(response.statusCode) else {
+//                if let response = urlResponse as? HTTPURLResponse {
+//                    os_log("%@", "\(response.statusCode)")
+//                }
+//                return
+//            }
+//
+//            complete(data)
+//        }.resume()
+//    }
 
     //Patch - Post와 비슷함
     static func requestPATCH(url: String, encodingData: Data, complete: @escaping (Data) -> ()) {
