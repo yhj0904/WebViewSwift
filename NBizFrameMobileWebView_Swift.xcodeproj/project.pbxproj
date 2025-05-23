@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5220F9E02DE00107006966E3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5220F9DF2DE00107006966E3 /* WebKit.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		52EB31642DDF128C006E26A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5220F9DF2DE00107006966E3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		52EB314D2DDF128B006E26A3 /* NBizFrameMobileWebView_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBizFrameMobileWebView_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EB31632DDF128C006E26A3 /* NBizFrameMobileWebView_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NBizFrameMobileWebView_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EB316D2DDF128C006E26A3 /* NBizFrameMobileWebView_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NBizFrameMobileWebView_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5220F9E02DE00107006966E3 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,12 +91,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5220F9DE2DE00107006966E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5220F9DF2DE00107006966E3 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52EB31442DDF128B006E26A3 = {
 			isa = PBXGroup;
 			children = (
 				52EB314F2DDF128B006E26A3 /* NBizFrameMobileWebView_Swift */,
 				52EB31662DDF128C006E26A3 /* NBizFrameMobileWebView_SwiftTests */,
 				52EB31702DDF128C006E26A3 /* NBizFrameMobileWebView_SwiftUITests */,
+				5220F9DE2DE00107006966E3 /* Frameworks */,
 				52EB314E2DDF128B006E26A3 /* Products */,
 			);
 			sourceTree = "<group>";
