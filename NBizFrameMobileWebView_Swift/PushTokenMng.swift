@@ -22,7 +22,7 @@ class PushTokenMng {
     static func registerInitialToken(fcmToken: String, jwt: String) {
         let requestData = RegisterTokenRequest(
             appId: AppConstants.APP_ID,
-            userId: UIDevice.current.identifierForVendor?.uuidString ?? "unknown-user",
+            userId: "nauri", //UIDevice.current.identifierForVendor?.uuidString ?? "unknown-user",
             deviceId: UIDevice.current.name,
             fcmToken: fcmToken
         )

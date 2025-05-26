@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.nauri.NBizFrameMobileWebVew-swift</string>
+	<string>com.nauri.NBizFrameMobileWebView-swift</string>
 	<key>PROJECT_ID</key>
 	<string>nbizframemoilewebviewkotiln</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:35930284796:ios:15b83e3e6e1661078aed79</string>
+	<string>1:35930284796:ios:8ff435227218c7628aed79</string>
 </dict>
 </plist>
