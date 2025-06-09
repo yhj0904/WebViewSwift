@@ -12,9 +12,9 @@ final class AppConstants {
     
     static let APP_ID = "MOBILE";
 
-    static let PUSH_SAVE_TOKEN_URL = "http://192.168.10.54:8080/api/token/register";
+    static let PUSH_SAVE_TOKEN_URL = "http://192.168.10.205:8086/api/token/register";
 
-    static let PUSH_REMOVE_TOKEN_URL = "http://192.168.10.54:8080/api/token/delete";
+    static let PUSH_REMOVE_TOKEN_URL = "http://192.168.10.205:8086/api/token/delete";
 
     static let PUSH_CHANNEL_ID = "알림";
 
@@ -22,7 +22,7 @@ final class AppConstants {
 
     static let PUSH_CHANNEL_DES = "NBizFrameMobile 알림 서비스 입니다";
     
-    static let APP_URL = "http://192.168.10.54:8080/swagger-ui/index.html";
+    static let APP_URL = "https://mis.kunsan.ac.kr/";
 
     //nexacro 로 반환될 이벤트 속성명
     static let UID = "uid";
